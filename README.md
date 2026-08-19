@@ -1,1 +1,1 @@
-CS UIL Practice thing
+Serves as a database and practice grounds for Computer Science UIL

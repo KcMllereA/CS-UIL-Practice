@@ -1,3 +1,3 @@
-export default function App() {
+export default function Modal() {
     return "this aint done yet";
 }
