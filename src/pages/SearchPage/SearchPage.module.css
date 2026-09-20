@@ -148,6 +148,21 @@
     font-size: 1em;
 }
 
+
+
+.chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid var(--gray50);
+    border-bottom: 1.5px solid var(--gray50);
+    transform: rotate(45deg);
+    transition: transform 0.15s ease;
+}
+
+.problemFolder[open] > .problemFolderName > .chevron {
+    transform: rotate(-135deg);
+}
+
 .problemFolderName:hover {
     text-decoration: underline;
 }
@@ -160,6 +175,7 @@
 
 .problemFolder[open] > .problemFolderContent {
     max-height: 100%;
+    border-top: 1px solid var(--gray25);
 }
 
 .problem,
@@ -171,7 +187,7 @@
     display: flex;
     align-items: center;
     /* gap: 15px; */
-    padding: 10px 5px 10px calc(var(--depth, 0) * 12px);
+    padding: 10px 12px 10px calc(var(--depth, 0) * 12px);
     border-bottom: 1px solid var(--borders);
     cursor: pointer;
     flex-shrink: 0;

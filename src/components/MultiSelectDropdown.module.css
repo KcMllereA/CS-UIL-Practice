@@ -117,10 +117,6 @@
     outline: 1px solid var(--gray50);
 }
 
-.optionsList {
-    /* max-height: 200px;
-    overflow-y: auto; */
-}
 .noResults {
     padding: 10px 6px;
     color: var(--gray50);

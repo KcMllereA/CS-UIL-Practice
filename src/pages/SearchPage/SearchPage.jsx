@@ -90,7 +90,8 @@ function ProblemFolder({ children, name, data, depth = 0, path }) {
                 <button onClick={handleToggle} className={styles.selectionButton}>
                     {/* {selectionState === "all" ? "X" : selectionState === "some" ? "-" : ""} */}
                 </button>
-                <div className={styles.truncated}>{capitalize(name)}</div>
+                <div style={{flex: 1}} className={styles.truncated}>{capitalize(name)}</div>
+                <span className={styles.chevron}></span>
             </div>
             <div className={styles.problemFolderContent}>{children}</div>
         </div>
