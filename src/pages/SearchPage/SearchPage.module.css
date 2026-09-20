@@ -1,0 +1,284 @@
+.upperPage {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    height: 20%;
+    margin: 0;
+    padding: 0;
+}
+
+/* temporary */
+.upperPage > :first-child {
+    flex-grow: 1;
+}
+
+.lowerPage {
+    display: flex;
+    overflow-y: hidden;
+    height: 80%;
+    max-height: 80%;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.problemListWrapper {
+    flex: 2;
+    border: 1px solid var(--borders);
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--panels);
+}
+.problemList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    max-height: 100%;
+}
+
+.sidePanelSection {
+    border-radius: 5px;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--borders);
+    background: var(--panels);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x:hidden
+}
+
+.problem > span {
+    padding-block: 5px;
+    font-weight: bold;
+}
+
+.problem > span:hover {
+    text-decoration: underline;
+}
+
+.selectionButton {
+    background: var(--dark);
+    outline: none;
+    border: 1px solid var(--borders);
+    border-radius: 5px;
+    margin-left: 10px;
+    aspect-ratio: 1 / 1;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    line-height: 0;
+    display: grid;
+    place-items: center;
+    color: var(--light);
+    font-weight: bold;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.tagList {
+    display: flex;
+    margin: 0;
+    flex-shrink: 10000;
+    flex-basis: auto;
+    min-width: 30px;
+    gap: 5px;
+}
+
+.truncated:not(.tagList) {
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.problemFolderName {
+    text-align: left;
+    font-size: 1em;
+}
+
+.problemFolderName:hover {
+    text-decoration: underline;
+}
+
+.problemFolderContent {
+    overflow: hidden;
+    max-height: 0;
+    width: 100%;
+}
+
+.problemFolder[open] > .problemFolderContent {
+    max-height: 100%;
+}
+
+.problem,
+.problemFolderName {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 5px 10px calc(var(--depth, 0) * 12px);
+    border-bottom: 1px solid var(--borders);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.truncated {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.problem {
+    justify-content: left;
+    font-size: 1em;
+}
+
+.problemFolderName {
+    background-color: color-mix(in oklab, var(--folders) calc(100% - 25% * (var(--depth) + 1)), transparent);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.hasGuides::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: calc(var(--depth) * 12px);
+    background-image: repeating-linear-gradient(to right, transparent 0 11px, var(--indents) 11px 12px);
+}
+.problem.hasGuides:not(:last-child)::before,
+.problemFolder:not(:last-child) > .problemFolderName.hasGuides::before {
+    width: calc(var(--depth) * 12px);
+}
+
+.filterPanel {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-inline: 15px;
+}
+
+.previewTitle {
+    display: block;
+    text-align: left;
+}
+
+.previewQuestionContent {
+    text-align: left;
+    font-size: 14px;
+    font-family: Calibri;
+}
+
+.previewCodeBlock {
+
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 1lh;
+    text-align: left;
+    text-wrap: wrap;
+    align-content: center;
+    flex-wrap: balance;
+
+    background: var(--gray10);
+    padding-left: 5px;
+    padding-right: 0;
+    padding-block: 10px;
+
+    font-family: Courier;
+    border-radius: 5px;
+
+    overflow-y: scroll;
+
+
+}
+
+.previewCodeBlock::-webkit-scrollbar {
+    width: 5px;
+}
+
+.previewCodeBlock::-webkit-scrollbar-track {
+    width: 5px;
+    display: none;
+    background: transparent;
+}
+
+.previewCodeBlock::-webkit-scrollbar-thumb {
+    background: var(--gray1);
+    border-radius: 10px;
+    border: 1px solid var(--gray10);
+    border-left: none;
+    background-clip: content-box;
+}
+
+.previewCodeBlock::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+.previewAnswerChoices {
+    display: grid;
+    font-size: 13px;
+
+    margin-bottom: auto
+}
+
+.previewAnswerChoice {
+    flex: 1;
+
+    display: flex;
+    margin: 2.5px;
+    align-items: baseline;
+
+    white-space: pre-wrap;
+    text-align: left;
+
+    font-weight: 200;
+    font-family: Calibri;
+}
+
+
+
+.answerLetter {
+    font-family: Calibri;
+    font-weight: 600;
+    min-width: 2.5ch;
+    flex-shrink: 0;
+}
+
+.previewTags {
+    display: flex;
+    gap: 5px;
+}
+
+.previewButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.previewButtons > a {
+    font-size: 13px;
+    flex: 1;
+    outline: none;
+    border: 1px solid var(--gray35);
+    background: none;
+    padding: 5px;
+    border-radius: 2.5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.previewButtons > a:hover {
+    background: var(--gray10)
+}
+
+.noneSelected {
+    margin-block: auto;
+    color: var(--gray75);
+}

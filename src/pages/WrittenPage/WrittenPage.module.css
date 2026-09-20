@@ -1,0 +1,152 @@
+.writtenPage {
+    margin-inline: auto;
+    font-family: Courier;
+    width: 7.5in;
+    margin-top: 0.5in;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+}
+
+.rowContainer + .rowContainer {
+    border-top: none;
+}
+
+.groupedQuestions,
+.codeBlock {
+    width: 50%;
+}
+
+.codeBlock {
+    display: inline-flex;
+
+    line-height: calc(18.1125em / 18);
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: start;
+
+    gap: 1lh;
+
+    white-space: pre;
+    text-align: left;
+    font-weight: 300;
+    font-size: 12px;
+
+    padding: 5px;
+    font-family: Courier;
+
+    border: 0;
+    border-left: 2px dotted white;
+}
+
+.groupedQuestions > .questionContainer:not(:last-child) {
+    border-bottom: 1px solid white;
+}
+
+.questionContainer {
+    width: 100%;
+    padding: 5px;
+    padding-top: 19px;
+    font-size: 13px;
+    position: relative;
+    font-family: Calibri;
+    text-align: left;
+}
+
+.questionContainer > :first-child {
+    letter-spacing: 0.16px;
+}
+
+.questionContainer::before {
+    content: "Question " attr(number);
+    font-size: 11px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66px;
+    height: 14px;
+    text-align: left;
+    padding-left: 6px;
+    font-weight: 600;
+}
+
+.answerChoices {
+    display: grid;
+
+    flex-direction: column;
+}
+
+.answerChoice {
+    flex: 1;
+
+    display: flex;
+    margin: 2.5px;
+    align-items: baseline;
+}
+
+.answerContent {
+    display: flex;
+    white-space: pre-wrap;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.answerContent * {
+    font-family: Calibri;
+}
+
+.answerLetter {
+    font-family: Calibri;
+    font-weight: 600;
+    font-size: 13px;
+    min-width: 2.5ch;
+    flex-shrink: 0;
+}
+
+.codeBlock * {
+    font-size: inherit;
+}
+
+@page {
+    size: letter;
+    margin: 0.5in;
+    margin-top: calc(2in / 3);
+    margin-bottom: calc(0.5in + 15px);
+
+    @bottom-center {
+        font-family: Calibri;
+        content: "UIL Computer Science Written Test – 2025-2026 District ";
+        font-size: 11px;
+        color: white;
+        margin-bottom: 0.5in;
+        border-top: 1px solid white;
+        height: 14px;
+    }
+
+    background: var(--dark);
+}
+
+@media print {
+    .writtenPage {
+        margin: 0;
+        margin-top: 126px;
+    }
+
+    .rowContainer {
+        break-inside: avoid;
+    }
+
+    @page {
+        border-top: 1px solid white;
+    }
+    @page :first {
+        border-top: none;
+    }
+}

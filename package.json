@@ -11,8 +11,14 @@
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
+        "@react-pdf/renderer": "^4.9.0",
+        "markdown-it": "^15.0.2",
+        "markdown-it-ins": "^4.0.0",
+        "markdown-it-sub": "^2.0.0",
+        "markdown-it-sup": "^2.0.0",
         "react": "^19.2.8",
         "react-dom": "^19.2.8",
+        "react-router-dom": "^7.18.2",
         "sql.js": "^1.14.2"
     },
     "devDependencies": {

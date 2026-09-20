@@ -1,0 +1,7 @@
+.inlineCode *, .fencedCode * {
+    font-family: Courier !important;
+}
+
+.bold {
+    font-weight: 800;
+}

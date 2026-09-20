@@ -1,18 +1,106 @@
+:root {
+    --dark: hsl(228, 26%, 4%);
+    --gray1: color-mix(in oklab, var(--light) 1%, var(--dark));
+    --gray2: color-mix(in oklab, var(--light) 2%, var(--dark));
+    --gray3: color-mix(in oklab, var(--light) 3%, var(--dark));
+    --gray4: color-mix(in oklab, var(--light) 4%, var(--dark));
+    --gray5: color-mix(in oklab, var(--light) 5%, var(--dark));
+    --gray6: color-mix(in oklab, var(--light) 6%, var(--dark));
+    --gray7: color-mix(in oklab, var(--light) 7%, var(--dark));
+    --gray8: color-mix(in oklab, var(--light) 8%, var(--dark));
+    --gray9: color-mix(in oklab, var(--light) 9%, var(--dark));
+    --gray10: color-mix(in oklab, var(--light) 10%, var(--dark));
+    --gray11: color-mix(in oklab, var(--light) 11%, var(--dark));
+    --gray12: color-mix(in oklab, var(--light) 12%, var(--dark));
+    --gray13: color-mix(in oklab, var(--light) 13%, var(--dark));
+    --gray14: color-mix(in oklab, var(--light) 14%, var(--dark));
+    --gray15: color-mix(in oklab, var(--light) 15%, var(--dark));
+    --gray16: color-mix(in oklab, var(--light) 16%, var(--dark));
+    --gray17: color-mix(in oklab, var(--light) 17%, var(--dark));
+    --gray18: color-mix(in oklab, var(--light) 18%, var(--dark));
+    --gray19: color-mix(in oklab, var(--light) 19%, var(--dark));
+    --gray20: color-mix(in oklab, var(--light) 20%, var(--dark));
+    --gray25: color-mix(in oklab, var(--light) 25%, var(--dark));
+    --gray30: color-mix(in oklab, var(--light) 30%, var(--dark));
+    --gray35: color-mix(in oklab, var(--light) 35%, var(--dark));
+    --gray40: color-mix(in oklab, var(--light) 40%, var(--dark));
+    --gray45: color-mix(in oklab, var(--light) 45%, var(--dark));
+    --gray50: color-mix(in oklab, var(--light) 50%, var(--dark));
+    --gray55: color-mix(in oklab, var(--light) 55%, var(--dark));
+    --gray60: color-mix(in oklab, var(--light) 60%, var(--dark));
+    --gray65: color-mix(in oklab, var(--light) 65%, var(--dark));
+    --gray70: color-mix(in oklab, var(--light) 70%, var(--dark));
+    --gray75: color-mix(in oklab, var(--light) 75%, var(--dark));
+    --gray80: color-mix(in oklab, var(--light) 80%, var(--dark));
+    --gray85: color-mix(in oklab, var(--light) 85%, var(--dark));
+    --gray90: color-mix(in oklab, var(--light) 90%, var(--dark));
+    --gray95: color-mix(in oklab, var(--light) 95%, var(--dark));
+    --light: hsl(245, 28%, 76%);
+
+    --borders: var(--gray25);
+    --indents: var(--gray15);
+    --folders: var(--gray10);
+    --panels: var(--gray4);
+}
+
 * {
-  box-sizing: border-box;
-  color: white;
-  font-family: Calibri;
+    box-sizing: border-box;
+    color: white;
+
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #181818;
+    margin: 0;
+    padding: 0;
+    background: var(--dark);
+
+    /* font-family: Calibri; */
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+
+    overflow: overlay
 }
 
 #root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  text-align: center;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    text-align: center;
+}
+
+html {
+    scrollbar-width: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track {
+    width: 0;
+    display: none;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+.tagPill {
+    display: block;
+    font-size: 0.5em;
+    color: var(--tag-color);
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--tag-color);
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 30px;
 }

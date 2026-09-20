@@ -1,3 +1,3 @@
 export default function ProgrammingPage() {
-    return "this aint done yet";
+    return "programming page aint done yet";
 }
