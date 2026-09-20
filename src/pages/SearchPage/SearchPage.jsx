@@ -82,11 +82,13 @@ function ProblemFolder({ children, name, data, depth = 0, path }) {
         else updateOpenedFolders(path, false);
     }, [open, path, updateOpenedFolders]);
 
+    const selected = selectionState === "all";
+
     return (
         <div className={styles.problemFolder} open={open}>
-            <div className={clsx(styles.problemFolderName, depth > 0 && styles.hasGuides)} style={{ "--depth": depth }} onClick={() => setOpen((o) => !o)}>
+            <div className={clsx(styles.problemFolderName, depth > 0 && styles.hasGuides, selected && styles.selected)} style={{ "--depth": depth }} onClick={() => setOpen((o) => !o)}>
                 <button onClick={handleToggle} className={styles.selectionButton}>
-                    {selectionState === "all" ? "X" : selectionState === "some" ? "-" : ""}
+                    {/* {selectionState === "all" ? "X" : selectionState === "some" ? "-" : ""} */}
                 </button>
                 <div className={styles.truncated}>{capitalize(name)}</div>
             </div>
@@ -100,9 +102,9 @@ function Problem({ data: { id, year, competition, type, tags, problem_number, pr
     const selected = id in selectedObj.current;
 
     return (
-        <div className={clsx(styles.problem, depth > 0 && styles.hasGuides/* , selected && styles.selected */)} style={{ "--depth": depth }}>
+        <div className={clsx(styles.problem, depth > 0 && styles.hasGuides, selected && styles.selected)} style={{ "--depth": depth }}>
             <button className={styles.selectionButton} onClick={() => toggleSelection(id, !selected)}>
-                {selected && "X"}
+                {/* {selected && "X"} */}
             </button>
             <span className={styles.truncated} onClick={() => onPreview(id)}>
                 {year} {capitalize(competition)} {type === "written" ? `Question ${problem_number}` : `Problem ${problem_number || "X"} ${capitalize(problem_name || "")}`}

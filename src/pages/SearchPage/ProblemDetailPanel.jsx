@@ -42,7 +42,7 @@ export default function ProblemDetailPanel({ id }) {
             let max = 0;
             for (const line of lines) max = Math.max(line.length, max);
 
-            setCodeSize(Math.min(24, (usableWidth - 15) / (max * 0.6)));
+            setCodeSize(Math.min(20, (usableWidth - 15) / (max * 0.6)));
         }
         updateWidth();
         window.addEventListener("resize", updateWidth);
